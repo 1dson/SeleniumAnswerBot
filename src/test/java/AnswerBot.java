@@ -5,14 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 
 public abstract class AnswerBot {
-
-    public static List<String> pageURL = new ArrayList<>();
 
     public void navigateScanAndSubmitForm() {
         String name;
