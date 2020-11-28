@@ -20,7 +20,7 @@ public class SeleniumUtils {
 
     public static void clickUsingJavaScript(String attribute){
         WebElement element = SeleniumDriverSetUp.driver.findElement(By.xpath("//*[contains(text(),'" + attribute + "')]"));
-        JavascriptExecutor executor = (JavascriptExecutor)SeleniumDriverSetUp.driver.navigate();
+        JavascriptExecutor executor = (JavascriptExecutor)SeleniumDriverSetUp.driver;
         executor.executeScript("arguments[0].click();", element);
     }
 }
