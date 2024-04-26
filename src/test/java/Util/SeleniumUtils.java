@@ -8,13 +8,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class SeleniumUtils {
     public static void waitForLoad(WebDriver driver) {
         ExpectedCondition<Boolean> pageLoadCondition = driver1 -> {
             assert driver1 != null;
             return ((JavascriptExecutor) driver1).executeScript("return document.readyState").equals("complete");
         };
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(pageLoadCondition);
     }
 
