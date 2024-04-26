@@ -21,7 +21,7 @@ public abstract class AnswerBot {
         List<WebElement> inputFields = SeleniumDriverSetUp.driver.findElements(By.tagName("input"));
 
         Iterator<WebElement> elementIterator;
-        if (buttons.size() != 0) {
+        if (!buttons.isEmpty()) {
             elementIterator = buttons.iterator();
         } else {
             elementIterator = inputFields.iterator();
@@ -48,7 +48,7 @@ public abstract class AnswerBot {
                 buttons = SeleniumDriverSetUp.driver.findElements(By.tagName("button"));
                 elementIterator = buttons.iterator();
 
-                if (SeleniumDriverSetUp.driver.findElements(By.tagName("input")).size() != 0) {
+                if (!SeleniumDriverSetUp.driver.findElements(By.tagName("input")).isEmpty()) {
                     SeleniumUtils
                             .waitForLoad(SeleniumDriverSetUp.driver);
                     List<WebElement> inputTag = SeleniumDriverSetUp.driver.findElements(By.tagName("input"));
